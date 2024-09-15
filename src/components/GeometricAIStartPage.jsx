@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { useNavigate } from 'react-router-dom'
 
 const GeometricShape = ({ size, color }) => {
   const [position, setPosition] = useState({ x: Math.random() * 100, y: Math.random() * 100 })
@@ -77,9 +78,10 @@ const GeometricBackground = () => {
 }
 
 const GeometricAIStartPage = () => {
+  const navigate = useNavigate()
+
   const handleStart = () => {
-    // You can add any logic here for what should happen when the Start button is clicked
-    console.log("Start button clicked")
+    navigate('/main')
   }
 
   return (
